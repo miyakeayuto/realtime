@@ -1,0 +1,29 @@
+@startuml
+'退室シーケンス
+
+participant クライアントA
+participant クライアントB
+participant クライアントC
+participant MagicOnion
+
+autonumber
+
+'A退室
+クライアントA -> MagicOnion:Exit(A)
+MagicOnion -> クライアントA:Users(A)
+'BにAが退室したことを伝える
+MagicOnion -> クライアントB:OnExit(A)
+'CにAが退室したことを伝える
+MagicOnion -> クライアントC:OnExit(A)
+
+'B退室
+クライアントB -> MagicOnion:Exit(B)
+MagicOnion -> クライアントB:Users(B)
+'CにBが退室したことを伝える
+MagicOnion -> クライアントC:OnExit(B)
+
+'C退室
+クライアントC -> MagicOnion:Exit(C)
+MagicOnion -> クライアントC:Users(C)
+
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+'botシーケンス図
+
+participant クライアント
+participant サーバー
+
+autonumber
+
+クライアント -> サーバー:質問
+クライアント <- サーバー:回答
+
+@enduml '図の終了

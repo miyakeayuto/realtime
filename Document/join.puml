@@ -1,0 +1,29 @@
+@startuml
+'入室シーケンス
+
+participant クライアントA
+participant クライアントB
+participant クライアントC
+participant MagicOnion
+
+autonumber
+
+'A入室
+クライアントA -> MagicOnion:Join(A)
+MagicOnion -> クライアントA:Users(A)
+
+'B入室
+クライアントB -> MagicOnion:Join(B)
+MagicOnion -> クライアントB:Users(A,B)
+'AにBが入室したことを伝える
+MagicOnion -> クライアントA:OnJoin(B)
+
+'C入室
+クライアントC -> MagicOnion:join(C)
+MagicOnion -> クライアントC:Users(A,B,C)
+'AにCが入室したことを伝える
+MagicOnion -> クライアントA:OnJoin(C)
+'BにCが入室したことを伝える
+MagicOnion -> クライアントB:OnJoin(C)
+
+@enduml
