@@ -9,10 +9,14 @@ public class GameDirector : MonoBehaviour
     [SerializeField] GameObject characterPrefab;
     [SerializeField]RoomModel roomModel;
     Dictionary<Guid, GameObject> characterList = new Dictionary<Guid, GameObject>();
+    GameObject JoinButton;
+    GameObject LeaveButton;
 
     // Start is called before the first frame update
     async void Start()
     {
+        LeaveButton.SetActive(false);
+
         //ユーザーが入室した時にOnJoinedUserメソッドを実行するよう、モデルに登録しておく
         roomModel.OnJoinedUser += this.OnJoinedUser;
         //接続
@@ -22,7 +26,10 @@ public class GameDirector : MonoBehaviour
     public async void JoinRoom()
     {
         //入室
-        await roomModel.JoinAsync("sampleRoom",1);
+        await roomModel.JoinAsync("sampleRoom", 1);
+        //入室ボタンを非表示にして退室ボタンを表示
+        JoinButton.SetActive(false);
+        LeaveButton.SetActive(true);
     }
 
     //ユーザーが入室した時の処理

@@ -11,5 +11,8 @@ namespace Shared.Interfaces.StreamingHubs
 
         //ユーザーの入室通知
         void OnJoin(JoinedUser user);
+
+        //ユーザーの退室通知
+        //void OnLeave();
     }
 }

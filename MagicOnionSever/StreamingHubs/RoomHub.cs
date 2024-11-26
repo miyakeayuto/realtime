@@ -8,6 +8,7 @@ namespace MagicOnionSever.StreamingHubs
     {
         private IGroup room;
 
+        //入室
         public async Task<JoinedUser[]> JoinAsync(string roomName, int userId)
         {
             //ルームに参加＆ルームを保持
@@ -21,7 +22,7 @@ namespace MagicOnionSever.StreamingHubs
             var roomStorage = this.room.GetInMemoryStorage<RoomData>();
             var joinedUser = new JoinedUser() { ConnectionID = this.ConnectionId, UserData = user };
             var roomData = new RoomData() { JoinedUser = joinedUser };
-            roomStorage.Set(this.ConnectionId,roomData);
+            roomStorage.Set(this.ConnectionId, roomData);
 
             //ルーム参加者全員に、ユーザーの入室通知を送信
             this.BroadcastExceptSelf(room).OnJoin(joinedUser);
@@ -37,6 +38,19 @@ namespace MagicOnionSever.StreamingHubs
             }
 
             return joinedUserList;
+        }
+
+        //退室
+        public async Task LeaveAsync()
+        {
+            //グループデータから削除
+            this.room.GetInMemoryStorage<RoomData>().Remove(this.ConnectionId);
+
+            //ルーム内のメンバーから自分を削除
+            await room.RemoveAsync(this.Context);
+
+            //退室したことを全メンバーに通知
+            //this.BroadcastExceptSelf(room).OnLeave();
         }
     }
 }
