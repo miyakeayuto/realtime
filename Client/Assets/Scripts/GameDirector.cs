@@ -7,16 +7,15 @@ using UnityEngine;
 public class GameDirector : MonoBehaviour
 {
     [SerializeField] GameObject characterPrefab;
-    [SerializeField]RoomModel roomModel;
+    [SerializeField] RoomModel roomModel;
     Dictionary<Guid, GameObject> characterList = new Dictionary<Guid, GameObject>();
-    GameObject JoinButton;
-    GameObject LeaveButton;
+    [SerializeField] GameObject JoinButton;
+    [SerializeField] GameObject LeaveButton;
 
     // Start is called before the first frame update
     async void Start()
     {
         LeaveButton.SetActive(false);
-
         //ユーザーが入室した時にOnJoinedUserメソッドを実行するよう、モデルに登録しておく
         roomModel.OnJoinedUser += this.OnJoinedUser;
         //接続
