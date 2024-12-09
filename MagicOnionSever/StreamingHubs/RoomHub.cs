@@ -52,5 +52,26 @@ namespace MagicOnionSever.StreamingHubs
             //退室したことを全メンバーに通知
             //this.BroadcastExceptSelf(room).OnLeave();
         }
+
+        //準備完了
+        /*public async Task ReadyHub()
+        {
+            //準備完了出来たことを自分のRoomDataに保存
+            var roomDataStorage = this.room.GetInMemoryStorage<RoomData>();
+            var roomData = roomDataStorage.Get(this.ConnectionId);
+            //roomDataにboolやintで準備完了を保存しておく
+
+
+            //全員準備できたか判定
+            bool isReady = false;
+            var roomDataList = roomDataStorage.AllValues.ToArray<RoomData>();
+            foreach (var roomData in roomDataList)
+            {
+                //roomDataに保存した準備完了状態を確認
+
+            }
+            //全員準備完了したら全員にゲーム開始を通知
+
+        }*/
     }
 }

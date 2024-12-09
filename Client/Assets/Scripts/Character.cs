@@ -1,7 +1,9 @@
+//==========================================
+//キャラ操作(スマホ)
+//==========================================
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Character : MonoBehaviour
 {
     float speed = 5.0f;
