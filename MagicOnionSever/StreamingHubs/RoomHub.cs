@@ -50,7 +50,7 @@ namespace MagicOnionSever.StreamingHubs
             await room.RemoveAsync(this.Context);
 
             //退室したことを全メンバーに通知
-            //this.BroadcastExceptSelf(room).OnLeave();
+            //this.BroadcastExceptSelf(room).OnLeave()
         }
 
         //準備完了
@@ -58,20 +58,36 @@ namespace MagicOnionSever.StreamingHubs
         {
             //準備完了出来たことを自分のRoomDataに保存
             var roomDataStorage = this.room.GetInMemoryStorage<RoomData>();
-            var roomData = roomDataStorage.Get(this.ConnectionId);
-            //roomDataにboolやintで準備完了を保存しておく
 
-
-            //全員準備できたか判定
-            bool isReady = false;
-            var roomDataList = roomDataStorage.AllValues.ToArray<RoomData>();
-            foreach (var roomData in roomDataList)
+            //lockを使って排他制御を行う。{}の中は1人しか実行できず、他の人は実行できるまで待機する。
+            lock (roomDataStorage)
             {
-                //roomDataに保存した準備完了状態を確認
+                var roomData = roomDataStorage.Get(this.ConnectionId);
+                //roomDataにboolやintで準備完了を保存しておく
+
+
+                //全員準備できたか判定
+                bool isReady = false;
+                var roomDataList = roomDataStorage.AllValues.ToArray<RoomData>();
+                foreach (var roomData in roomDataList)
+                {
+                    //roomDataに保存した準備完了状態を確認
+
+                }
+                //全員準備完了したら全員にゲーム開始を通知
 
             }
-            //全員準備完了したら全員にゲーム開始を通知
+        }*/
 
+        //マッチング
+        /*public async Task<JoinedUser[]> JoinLobbyAsync(int userId)
+        {
+            JoinedUser[] joinedUserList = await JoinAsync("Lobby",userId);
+            
+            //同じマッチング条件の人が集まっていたらOnMatchingを呼び出し
+
+
+            return joinedUserList;
         }*/
     }
 }

@@ -14,5 +14,11 @@ namespace Shared.Interfaces.StreamingHubs
 
         //ユーザーの退室通知
         //void OnLeave();
+
+        //マッチング通知
+        //void OnMatching(string roomName);
+
+        //位置・回転をクライアントに送信する
+        //void OnMove(接続ID,位置,回転);
     }
 }
