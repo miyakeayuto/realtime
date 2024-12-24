@@ -257,7 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e47059387051f054da75051006509fd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterPrefab: {fileID: 441195633035174825, guid: f04a7727073d7984fa1d2a295e7c4e90,
+  characterPrefab: {fileID: 7072444061591711186, guid: 910177ec26b76c14996c2d53627a6def,
     type: 3}
   roomModel: {fileID: 387161319}
   JoinButton: {fileID: 562919934}

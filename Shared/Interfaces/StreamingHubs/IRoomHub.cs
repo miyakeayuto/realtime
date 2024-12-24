@@ -17,7 +17,7 @@ namespace Shared.Interfaces.StreamingHubs
 
 
         //自動マッチング
-        Task<JoinedUser[]> JoinLobbyAsync(int userId);
+        //Task<JoinedUser[]> JoinLobbyAsync(int userId);
 
         //位置・回転をサーバーに送信する
         //Task MoveAsync(位置,回転);

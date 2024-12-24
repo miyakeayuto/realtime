@@ -13,7 +13,7 @@ namespace Shared.Interfaces.StreamingHubs
         void OnJoin(JoinedUser user);
 
         //ユーザーの退室通知
-        //void OnLeave();
+        
 
         //マッチング通知
         //void OnMatching(string roomName);

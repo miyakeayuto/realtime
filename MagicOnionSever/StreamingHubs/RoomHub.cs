@@ -75,7 +75,7 @@ namespace MagicOnionSever.StreamingHubs
 
                 }
                 //全員準備完了したら全員にゲーム開始を通知
-
+                //this.BroadcastExceptSelf(room).OnStart()
             }
         }*/
 
