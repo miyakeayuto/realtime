@@ -54,7 +54,7 @@ namespace MagicOnionSever.StreamingHubs
         }
 
         //準備完了
-        public async Task ReadyHub()
+        /*public async Task ReadyHub()
         {
             //準備完了出来たことを自分のRoomDataに保存
             var roomDataStorage = this.room.GetInMemoryStorage<RoomData>();
@@ -77,10 +77,10 @@ namespace MagicOnionSever.StreamingHubs
                 //全員準備完了したら全員にゲーム開始を通知
                 //this.BroadcastExceptSelf(room).OnStart()
             }
-        }
+        }*/
 
         //マッチング
-        public async Task<JoinedUser[]> JoinLobbyAsync(int userId)
+        /*public async Task<JoinedUser[]> JoinLobbyAsync(int userId)
         {
             JoinedUser[] joinedUserList = await JoinAsync("Lobby",userId);
             
@@ -88,6 +88,6 @@ namespace MagicOnionSever.StreamingHubs
 
 
             return joinedUserList;
-        }
+        }*/
     }
 }

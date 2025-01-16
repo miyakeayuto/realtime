@@ -22,6 +22,7 @@ public class GameDirector : MonoBehaviour
         await roomModel.ConnectAsync();
     }
 
+    //入室処理
     public async void JoinRoom()
     {
         //入室
@@ -35,7 +36,7 @@ public class GameDirector : MonoBehaviour
     private void OnJoinedUser(JoinedUser user)
     {
         GameObject characterObject = Instantiate(characterPrefab);      //インスタンス生成
-        characterObject.transform.position = new Vector3(0,0,0);
+        characterObject.transform.position = new Vector3(0, 0, 10);
         characterList[user.ConnectionID] = characterObject;             //フィールドで保存
     }
 }
