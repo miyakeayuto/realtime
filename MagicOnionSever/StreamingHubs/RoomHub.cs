@@ -54,7 +54,7 @@ namespace MagicOnionSever.StreamingHubs
         }
 
         //準備完了
-        /*public async Task ReadyHub()
+       /* public async Task ReadyHub()
         {
             //準備完了出来たことを自分のRoomDataに保存
             var roomDataStorage = this.room.GetInMemoryStorage<RoomData>();
