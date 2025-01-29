@@ -18,7 +18,7 @@ namespace Shared.Interfaces.StreamingHubs
         //マッチング通知
         //void OnMatching(string roomName);
 
-        //位置・回転をクライアントに送信する
+        //位置・回転をクライアントに通知する
         //void OnMove(接続ID,位置,回転);
     }
 }
