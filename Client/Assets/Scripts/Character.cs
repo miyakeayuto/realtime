@@ -16,7 +16,7 @@ public class Character : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody>();
         floatingJoystickMove = GameObject.Find("Move").GetComponent<FloatingJoystick>();
-        floatingJoystickAim = GameObject.Find("Aim").GetComponent<FloatingJoystick>();
+        //floatingJoystickAim = GameObject.Find("Aim").GetComponent<FloatingJoystick>();
     }
 
     // Update is called once per frame

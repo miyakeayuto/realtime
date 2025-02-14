@@ -60,4 +60,10 @@ public class RoomModel : BaseModel, IRoomHubReceiver
     {
         OnJoinedUser(user);
     }
+
+    //位置・回転を送信する
+
+
+    //位置・回転の通知
+
 }

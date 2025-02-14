@@ -89,5 +89,13 @@ namespace MagicOnionSever.StreamingHubs
 
             return joinedUserList;
         }*/
+
+        //位置・回転をクライアントに通知する
+        /*public async Task MoveAsync(位置,回転)
+        {
+            //グループストレージからRoomDataを取得して位置と回転を保存
+
+            //ルーム内の他ユーザーに位置・回転の変更を通知
+        }*/
     }
 }

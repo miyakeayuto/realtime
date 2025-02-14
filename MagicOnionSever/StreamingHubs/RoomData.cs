@@ -6,5 +6,9 @@ namespace MagicOnionSever.StreamingHubs
     public class RoomData
     {
         public JoinedUser JoinedUser { get; set; }
+
+        //位置
+
+        //回転
     }
 }
